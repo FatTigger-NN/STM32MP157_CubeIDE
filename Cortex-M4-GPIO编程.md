@@ -27,7 +27,7 @@
 FS-MP1A 开发平台上的 LED 的亮灭状态，与芯片上的引脚 I/O 输出电平有关。
 
 FS-MP1A 开发平台上 LED 的 I/O：
-![image-20231226225208309](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231226225208309.png)
+![image-20231226225208309](.\Picture\image-20231226225208309.png)
 
 IO 操作重要结构体：GPIO_InitTypeDef
 
@@ -87,7 +87,7 @@ IO 口可以由软件配置成 4 种模式，其实操作的是 GPIO 的端口�
 上面给两个寄存器赋值了，1~4 位是 GPIO 端口模式寄存器，5~8 位是端口输出类型寄存器（决定是推挽输出还是开漏输出）。
 
 STM32 的 GPIO 端口在作为输出时，可以软件配置端口最大支持的时钟速率，下图是端口输出速度寄存器，有以下几种速度选择：
-![image-20231226230116224](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231226230116224.png)
+![image-20231226230116224](.\Picture\image-20231226230116224.png)
 
 ```c
 /**
@@ -127,20 +127,20 @@ void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState Pin
        “ Cortex-M4”，否则 STM32CubeMX 不会生生成 GPIO 初始化相关代码。具体操作：在刚才
 
        选择的引脚上，鼠标右键选择“ Pin Reservation”->“ Cortex-M4”。
-       ![image-20231227223031781](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231227223031781.png)
+       ![image-20231227223031781](.\Picture\image-20231227223031781.png)
 
 3.   其余生成步骤一样.
 
 4.   添加 GPIO 函数说明：
 
      我们需要在 main.c 中添加 GPIO 相关函数， GPIO 引脚输出电平高低函数
-     ![image-20231227223346865](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231227223346865.png)
+     ![image-20231227223346865](.\Picture\image-20231227223346865.png)
 
 5.   在 main.c 中调用函数改变 GPIO 引脚高低电平来改变 LED 灯的状态
-     ![image-20231227224233400](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231227224233400.png)
+     ![image-20231227224233400](.\Picture\image-20231227224233400.png)
 
 ## 	4.实验现象
 
 可看到 LED 灯循环亮灭
 
-![image-20231227224503063](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231227224503063.png)
+![image-20231227224503063](.\Picture\image-20231227224503063.png)
