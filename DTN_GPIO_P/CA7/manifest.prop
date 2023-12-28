@@ -1,0 +1,5 @@
+MANIFEST_VERSION = openstlinux-6.1-yocto-mickledore-mp1-v23.06.21
+KERNEL_DT = ./DeviceTree/DTN_GPIO_P/kernel
+OPTEE_DT = ./DeviceTree/DTN_GPIO_P/optee-os
+UBOOT_DT = ./DeviceTree/DTN_GPIO_P/u-boot
+TFA_DT = ./DeviceTree/DTN_GPIO_P/tf-a
